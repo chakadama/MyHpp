@@ -24,7 +24,7 @@ private:
 	// 更新节点高度
 	void updateHeight(TreeNode<T>* node);
 	// 获取平衡因子
-	size_t getBalanceFactor(TreeNode<T>* node);
+	int getBalanceFactor(TreeNode<T>* node);
 	// 右旋
 	TreeNode<T>* rightRotate(TreeNode<T>* y);
 	// 左旋
@@ -73,7 +73,7 @@ inline void MyTree<T>::updateHeight(TreeNode<T>* node)
 }
 
 template<typename T>
-inline size_t MyTree<T>::getBalanceFactor(TreeNode<T>* node)
+inline int MyTree<T>::getBalanceFactor(TreeNode<T>* node)
 {
 	return node ? getHeight(node->leftChild) - getHeight(node->rightChild) : 0;
 }
