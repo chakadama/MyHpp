@@ -2,6 +2,7 @@
 
 #include "MyVector.hpp"
 #include "MyList.hpp"
+#include "MyTree.hpp"
 
 static void vectorTest() {
 	MyVector<int> v1;
@@ -50,9 +51,33 @@ static void listTest() {
 	L1.printList();
 }
 
+static void treeTest() {
+	MyTree<int> t1;
+
+	t1.insert(4);
+	t1.insert(3);
+	t1.insert(6);
+	t1.insert(2);
+	t1.insert(99);
+	t1.insert(44);
+
+	std::cout << "中序：";
+	t1.inOrderTraversal();
+	std::cout << "高度" << t1.height() << std::endl;
+
+	t1.remove(4);
+	std::cout << "删除后：";
+	t1.inOrderTraversal();
+
+	t1.insert(4);
+	std::cout << "中序2：";
+	t1.inOrderTraversal();
+}
+
 int main() {
 	//vectorTest();
 	//listTest();
+	treeTest();
 
 	return 0;
 }
